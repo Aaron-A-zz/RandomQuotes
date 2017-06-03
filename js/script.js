@@ -61,14 +61,14 @@ const quotes = [
 ]
 
 //Takes an array and returns a random item from that array
-function randomQuote(quoteArray) {
+function getRandomQuote(quoteArray) {
   var randomQuote = quoteArray[Math.floor(Math.random() * quoteArray.length)];
   return randomQuote
 }
 
 //Replaces the inner HTML for both the quote & source elements
 function printQuote() {
-  var nextQuote = randomQuote(quotes);
+  var nextQuote = getRandomQuote(quotes);
   console.log(nextQuote);
 
   var quote = document.getElementsByClassName('quote')[0];
