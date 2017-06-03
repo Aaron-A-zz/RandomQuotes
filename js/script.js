@@ -1,25 +1,61 @@
 // Created by Aaron A
 
+//JSON DATA
 const quotes = [
   {
     quote: "I'm not anti-college, I'm just pro-Student",
     source: "Ryan Carson",
-    citation: "Twitter @ryancarson",
-    date:"May 25, 2017",
+    citation: "Twitter",
+    date:"2017",
     tags: "Motivation"
   },
   {
-    quote: "I'm not anti-college, I'm just pro-Student",
-    source: "Ryan Carson",
-    citation: "Twitter @ryancarson",
-    date:"May 25, 2017",
+    quote: "When you want to succeed as bad as you want to breathe, then you’ll be successful!",
+    source: "Eric Thomas",
+    citation: "MSU",
+    date:"2015",
     tags: "Motivation"
   },
   {
-    quote: "I'm not anti-college, I'm just pro-Student",
-    source: "Ryan Carson",
-    citation: "Twitter @ryancarson",
-    date:"May 25, 2017",
+    quote: "If you wanna make money, I’ll meet you tomorrow. 4 AM",
+    source: "Eric Thomas",
+    citation: "MSU",
+    date:"2015",
+    tags: "Motivation"
+  },
+  {
+    quote: "Our greatest weakness lies in giving up.",
+    source: "Thomas Edison",
+    citation: "BrainyQuote",
+    date:"Date: Unknown",
+    tags: "Motivation"
+  },
+  {
+    quote: "If you want to achieve greatness stop asking for permission.",
+    source: "Anonymous",
+    citation: "huffington post",
+    date:"Date: Unknown",
+    tags: "Motivation"
+  },
+  {
+    quote: "All our dreams can come true if we have the courage to pursue them",
+    source: "Walt Disney",
+    citation: "Disney.com",
+    date:"Date: Unknown",
+    tags: "Motivation"
+  },
+  {
+    quote: "Try not to become a person of success, but rather try to become a person of value.",
+    source: "Albert Einstein",
+    citation: "huffington post",
+    date:"Date: Unknown",
+    tags: "Motivation"
+  },
+  {
+    quote: "If you can’t explain it simply, you don’t understand it well enough.",
+    source: "Albert Einstein",
+    citation: "huffington post",
+    date:"Date: Unknown",
     tags: "Motivation"
   }
 ]
@@ -30,20 +66,17 @@ function randomQuote(quoteArray) {
   return randomQuote
 }
 
+//Replaces the inner HTML for both the quote & source elements
 function printQuote() {
   var nextQuote = randomQuote(quotes);
   console.log(nextQuote);
 
   var quote = document.getElementsByClassName('quote')[0];
-  quote.innerHTML = nextQuote.quote;
+  quote.innerHTML =  nextQuote.quote
 
   var source = document.getElementsByClassName('source')[0];
-  source.innerHTML = nextQuote.source;
-
-  var citation = document.getElementsByClassName('citation')[0];
-  citation.innerHTML = nextQuote.citation;
-  console.log(citation);
-
+  source.innerHTML =  nextQuote.source + '<span class="citation">' +
+  nextQuote.citation + '</span>' + '<span class="year">' + nextQuote.date + '</span>'
 }
 
 // event listener to respond to "Show another quote" button clicks
